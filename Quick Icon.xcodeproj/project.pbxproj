@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		381D71DB1EA34126003306EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D71DA1EA34126003306EB /* AppDelegate.m */; };
 		381D71DE1EA34126003306EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D71DD1EA34126003306EB /* main.m */; };
-		381D71E11EA34126003306EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D71E01EA34126003306EB /* ViewController.m */; };
 		381D71E31EA34126003306EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381D71E21EA34126003306EB /* Assets.xcassets */; };
 		381D71E61EA34126003306EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 381D71E41EA34126003306EB /* Main.storyboard */; };
-		381D71F41EA34FB0003306EB /* TargetImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D71F31EA34FB0003306EB /* TargetImageView.m */; };
-		381D71FA1EA35529003306EB /* DeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381D71F91EA35529003306EB /* DeadImageView.m */; };
 		381D722B1EA37107003306EB /* macOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 381D722A1EA37107003306EB /* macOS.json */; };
 		38B4CD051EAB4A4C00E9DEF8 /* iMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B4CD021EAB4A4C00E9DEF8 /* iMessage.json */; };
 		38B4CD061EAB4A4C00E9DEF8 /* iOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B4CD031EAB4A4C00E9DEF8 /* iOS.json */; };
 		38B4CD071EAB4A4C00E9DEF8 /* watchOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B4CD041EAB4A4C00E9DEF8 /* watchOS.json */; };
+		38B4CD711EAB9DFE00E9DEF8 /* DeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD6E1EAB9DFE00E9DEF8 /* DeadImageView.m */; };
+		38B4CD721EAB9DFE00E9DEF8 /* TargetImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD701EAB9DFE00E9DEF8 /* TargetImageView.m */; };
+		38B4CD751EAB9E1900E9DEF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD741EAB9E1900E9DEF8 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,20 +25,20 @@
 		381D71D91EA34126003306EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		381D71DA1EA34126003306EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		381D71DD1EA34126003306EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		381D71DF1EA34126003306EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		381D71E01EA34126003306EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		381D71E21EA34126003306EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		381D71E51EA34126003306EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		381D71E71EA34126003306EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		381D71F21EA34FB0003306EB /* TargetImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetImageView.h; sourceTree = "<group>"; };
-		381D71F31EA34FB0003306EB /* TargetImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetImageView.m; sourceTree = "<group>"; };
-		381D71F81EA35529003306EB /* DeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadImageView.h; sourceTree = "<group>"; };
-		381D71F91EA35529003306EB /* DeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadImageView.m; sourceTree = "<group>"; };
 		381D722A1EA37107003306EB /* macOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = macOS.json; path = Assets.xcassets/AppIcon.appiconset/macOS.json; sourceTree = "<group>"; };
 		381D72321EA3E219003306EB /* Quick Icon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Quick Icon.entitlements"; sourceTree = "<group>"; };
 		38B4CD021EAB4A4C00E9DEF8 /* iMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = iMessage.json; path = jsonFiles/iMessage.json; sourceTree = "<group>"; };
 		38B4CD031EAB4A4C00E9DEF8 /* iOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = iOS.json; path = jsonFiles/iOS.json; sourceTree = "<group>"; };
 		38B4CD041EAB4A4C00E9DEF8 /* watchOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = watchOS.json; path = jsonFiles/watchOS.json; sourceTree = "<group>"; };
+		38B4CD6D1EAB9DFE00E9DEF8 /* DeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeadImageView.h; path = Views/DeadImageView.h; sourceTree = "<group>"; };
+		38B4CD6E1EAB9DFE00E9DEF8 /* DeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeadImageView.m; path = Views/DeadImageView.m; sourceTree = "<group>"; };
+		38B4CD6F1EAB9DFE00E9DEF8 /* TargetImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetImageView.h; path = Views/TargetImageView.h; sourceTree = "<group>"; };
+		38B4CD701EAB9DFE00E9DEF8 /* TargetImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetImageView.m; path = Views/TargetImageView.m; sourceTree = "<group>"; };
+		38B4CD731EAB9E1900E9DEF8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = "<group>"; };
+		38B4CD741EAB9E1900E9DEF8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewControllers/ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +107,10 @@
 		38B4CD081EAB4A5700E9DEF8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				381D71F81EA35529003306EB /* DeadImageView.h */,
-				381D71F91EA35529003306EB /* DeadImageView.m */,
-				381D71F21EA34FB0003306EB /* TargetImageView.h */,
-				381D71F31EA34FB0003306EB /* TargetImageView.m */,
+				38B4CD6D1EAB9DFE00E9DEF8 /* DeadImageView.h */,
+				38B4CD6E1EAB9DFE00E9DEF8 /* DeadImageView.m */,
+				38B4CD6F1EAB9DFE00E9DEF8 /* TargetImageView.h */,
+				38B4CD701EAB9DFE00E9DEF8 /* TargetImageView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -118,8 +118,8 @@
 		38B4CD091EAB4A6000E9DEF8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				381D71DF1EA34126003306EB /* ViewController.h */,
-				381D71E01EA34126003306EB /* ViewController.m */,
+				38B4CD731EAB9E1900E9DEF8 /* ViewController.h */,
+				38B4CD741EAB9E1900E9DEF8 /* ViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -207,11 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381D71E11EA34126003306EB /* ViewController.m in Sources */,
+				38B4CD721EAB9DFE00E9DEF8 /* TargetImageView.m in Sources */,
 				381D71DE1EA34126003306EB /* main.m in Sources */,
+				38B4CD711EAB9DFE00E9DEF8 /* DeadImageView.m in Sources */,
 				381D71DB1EA34126003306EB /* AppDelegate.m in Sources */,
-				381D71FA1EA35529003306EB /* DeadImageView.m in Sources */,
-				381D71F41EA34FB0003306EB /* TargetImageView.m in Sources */,
+				38B4CD751EAB9E1900E9DEF8 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

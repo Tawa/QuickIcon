@@ -11,5 +11,7 @@
 @interface ViewController : NSViewController
 
 @property (weak) IBOutlet NSTextField *label;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (weak) IBOutlet NSStackView *buttons;
 
 @end

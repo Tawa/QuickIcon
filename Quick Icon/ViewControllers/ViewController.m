@@ -11,6 +11,11 @@
 #import "TargetImageView.h"
 
 @interface ViewController() <TargetImageViewDelegate>
+{
+	// Variable used for the max progress indicator count;
+	NSInteger currentCount;
+	NSInteger totalCount;
+}
 
 @property (strong, nonatomic) NSString *directory;
 @property (strong, nonatomic) NSString *filename;
@@ -165,6 +170,7 @@
 		NSImage *image = [self imageResize:self.largeImage newSize:size];
 		NSString *imagePath = [path stringByAppendingPathComponent:fileName];
 		[self saveImage:image atPath:imagePath];
+		[self increaseProgress];
 	}
 }
 
@@ -173,17 +179,20 @@
  */
 -(void)generateiTunes
 {
-	NSImage *image = [self imageResize:self.largeImage newSize:NSMakeSize(1536, 1536)];
-	NSString *path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@3x.png"];
+	NSImage *image = [self imageResize:self.largeImage newSize:NSMakeSize(512, 512)];
+	NSString *path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@1x.png"];
 	[self saveImage:image atPath:path];
+	[self increaseProgress];
 	
 	image = [self imageResize:self.largeImage newSize:NSMakeSize(1024, 1024)];
 	path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@2x.png"];
 	[self saveImage:image atPath:path];
-	
-	image = [self imageResize:self.largeImage newSize:NSMakeSize(512, 512)];
-	path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@1x.png"];
+	[self increaseProgress];
+
+	image = [self imageResize:self.largeImage newSize:NSMakeSize(1536, 1536)];
+	path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@3x.png"];
 	[self saveImage:image atPath:path];
+	[self increaseProgress];
 }
 
 /*
@@ -194,6 +203,43 @@
 	
 	// Open the output folder for the user
 	[[NSWorkspace sharedWorkspace] openFile:self.directory];
+	
+	[self hideProgress];
+}
+
+/*
+ *	Show progress and hide buttons
+ */
+-(void)showProgress
+{
+	[self.progressIndicator setMinValue:0];
+	[self.progressIndicator setDoubleValue:0];
+	[self.progressIndicator startAnimation:self];
+	[self.progressIndicator setHidden:NO];
+	currentCount = 0;
+	[self.buttons setHidden:YES];
+}
+
+/*
+ *	Increase the progress
+ */
+-(void)increaseProgress
+{
+	currentCount++;
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.progressIndicator setDoubleValue:(double)currentCount];
+	});
+}
+
+/*
+ *	Hide progress and show buttons
+ */
+-(void)hideProgress
+{
+	[self.progressIndicator stopAnimation:self];
+	[self.progressIndicator setHidden:YES];
+
+	[self.buttons setHidden:NO];
 }
 
 -(void)start:(void(^)())completion
@@ -201,7 +247,6 @@
 	if (self.filename == nil) {
 		return;
 	}
-	
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
 	[panel setCanCreateDirectories:YES];
 	[panel setCanChooseFiles:NO];
@@ -210,7 +255,9 @@
 	[panel beginSheetModalForWindow:[NSApplication sharedApplication].windows[0] completionHandler:^(NSInteger result) {
 		if (result == NSFileHandlingPanelOKButton) {
 			self.directory = [[panel.URL path] stringByAppendingPathComponent:self.filename];
+			[self showProgress];
 			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+				
 				completion(self);
 				dispatch_async(dispatch_get_main_queue(), ^{
 					[self finish];
@@ -222,27 +269,33 @@
 
 -(IBAction)generateiOS:(id)sender {
 	[self start:^{
+		totalCount = 31;
 		[self generate:@"iOS"];
 	}];
 }
 -(IBAction)generatewatchOS:(id)sender {
 	[self start:^{
+		totalCount = 11;
 		[self generate:@"watchOS"];
-	}];
-}
--(IBAction)generatemacOS:(id)sender {
-	[self start:^{
-		[self generate:@"macOS"];
 	}];
 }
 -(IBAction)generateiMessage:(id)sender
 {
 	[self start:^{
+		totalCount = 12;
 		[self generate:@"iMessage"];
 	}];
 }
+-(IBAction)generatemacOS:(id)sender {
+	[self start:^{
+		totalCount = 13;
+		[self generate:@"macOS"];
+	}];
+}
+
 -(IBAction)generateAll:(id)sender {
 	[self start:^{
+		totalCount = 58;
 		[self generate:@"iOS"];
 		[self generate:@"watchOS"];
 		[self generate:@"iMessage"];

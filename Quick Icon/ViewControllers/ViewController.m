@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-
 #import "TargetImageView.h"
+#import "NSImage+CropAndResizeImage.h"
 
 @interface ViewController() <TargetImageViewDelegate>
 {
@@ -53,80 +53,15 @@
 	return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
 
-
 -(void)buildFolder:(NSString *)path
 {
 	NSError *error = nil;
 	[[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
 }
 
--(NSImage *)fixSize:(NSImage *)sourceImage
-{
-	NSSize newSize = sourceImage.size;
-	if (!sourceImage.isValid)
-		return nil;
-	
-	NSBitmapImageRep *rep = [[NSBitmapImageRep alloc]
-							 initWithBitmapDataPlanes:NULL
-							 pixelsWide:newSize.width
-							 pixelsHigh:newSize.height
-							 bitsPerSample:8
-							 samplesPerPixel:4
-							 hasAlpha:YES
-							 isPlanar:NO
-							 colorSpaceName:NSCalibratedRGBColorSpace
-							 bytesPerRow:0
-							 bitsPerPixel:0];
-	rep.size = newSize;
-	
-	[NSGraphicsContext saveGraphicsState];
-	[NSGraphicsContext setCurrentContext:[NSGraphicsContext graphicsContextWithBitmapImageRep:rep]];
-	[sourceImage drawInRect:NSMakeRect(0, 0, newSize.width, newSize.height) fromRect:NSZeroRect operation:NSCompositingOperationCopy fraction:1.0];
-	[NSGraphicsContext restoreGraphicsState];
-	
-	NSImage *newImage = [[NSImage alloc] initWithSize:newSize];
-	[newImage addRepresentation:rep];
-	return newImage;
-}
-
--(NSImage *)imageResize:(NSImage*)anImage newSize:(NSSize)newSize {
-	NSImage *sourceImage = [anImage copy];
-	CGFloat s = 1;
-	if (anImage.size.width <= anImage.size.height) {
-		s = newSize.width / anImage.size.width;
-	} else {
-		s = newSize.height / anImage.size.height;
-	}
-	NSSize size = NSMakeSize(anImage.size.width * s, anImage.size.height * s);
-	
-	// The variables needed for cropping
-	CGFloat x = 0;				// X Position shift
-	CGFloat y = 0;				// Y Position shift
-	CGFloat w = size.width;		// Result Width
-	CGFloat h = size.height;	// Result Height
-	CGFloat a = w/h;			// Aspect Ratio
-	if (a > 1) {
-		x = (h-w)*0.5;
-	} else {
-		y = (w-h)*0.5;
-	}
-
-	if (![sourceImage isValid]){
-		NSLog(@"Invalid Image");
-	} else {
-		NSImage *newImage = [[NSImage alloc] initWithSize:newSize];
-		[newImage lockFocus];
-		[sourceImage setSize:size];
-		[[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
-		[sourceImage drawAtPoint:NSMakePoint(x, y) fromRect:NSMakeRect(0, 0, w, h) operation:NSCompositingOperationCopy fraction:1.0];
-		[newImage unlockFocus];
-		return newImage;
-	}
-	return nil;
-}
-
 -(void)saveImage:(NSImage *)image atPath:(NSString *)path {
-	NSData *imageData = [[self fixSize:image] TIFFRepresentation];
+//	NSData *imageData = [[self fixSize:image] TIFFRepresentation];
+	NSData *imageData = [image TIFFRepresentation];
 	NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
 	NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
 	imageData = [imageRep representationUsingType:NSPNGFileType properties:imageProps];
@@ -167,7 +102,7 @@
 		NSSize size = NSMakeSize(width*scale, height*scale);
 		
 		// Get output image, path, and save it.
-		NSImage *image = [self imageResize:self.largeImage newSize:size];
+		NSImage *image = [self.largeImage cropAndResizeImage:size];
 		NSString *imagePath = [path stringByAppendingPathComponent:fileName];
 		[self saveImage:image atPath:imagePath];
 		[self increaseProgress];
@@ -179,17 +114,17 @@
  */
 -(void)generateiTunes
 {
-	NSImage *image = [self imageResize:self.largeImage newSize:NSMakeSize(512, 512)];
+	NSImage *image = [self.largeImage cropAndResizeImage:NSMakeSize(512, 512)];
 	NSString *path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@1x.png"];
 	[self saveImage:image atPath:path];
 	[self increaseProgress];
 	
-	image = [self imageResize:self.largeImage newSize:NSMakeSize(1024, 1024)];
+	image = [self.largeImage cropAndResizeImage:NSMakeSize(1024, 1024)];
 	path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@2x.png"];
 	[self saveImage:image atPath:path];
 	[self increaseProgress];
 
-	image = [self imageResize:self.largeImage newSize:NSMakeSize(1536, 1536)];
+	image = [self.largeImage cropAndResizeImage:NSMakeSize(1536, 1536)];
 	path = [self.directory stringByAppendingPathComponent:@"iTunesArtWork@3x.png"];
 	[self saveImage:image atPath:path];
 	[self increaseProgress];

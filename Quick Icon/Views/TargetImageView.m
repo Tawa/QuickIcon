@@ -7,6 +7,7 @@
 //
 
 #import "TargetImageView.h"
+#import "NSImage+CropAndResizeImage.h"
 
 
 @implementation TargetImageView
@@ -71,6 +72,10 @@
 {
 	if ([sender draggingSource] != self ) {
 		NSImage *image = [[NSImage alloc] initWithPasteboard: [sender draggingPasteboard]];
+		
+		CGFloat size = image.size.width < image.size.height? image.size.width:image.size.height;
+		image = [image cropAndResizeImage:CGSizeMake(size, size)];
+		
 		// Use layer in order to support Aspect-Fill behavior
 		self.layer.contents = image;
 		

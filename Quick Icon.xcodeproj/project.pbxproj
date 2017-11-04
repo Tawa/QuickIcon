@@ -18,6 +18,7 @@
 		38B4CD711EAB9DFE00E9DEF8 /* DeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD6E1EAB9DFE00E9DEF8 /* DeadImageView.m */; };
 		38B4CD721EAB9DFE00E9DEF8 /* TargetImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD701EAB9DFE00E9DEF8 /* TargetImageView.m */; };
 		38B4CD751EAB9E1900E9DEF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CD741EAB9E1900E9DEF8 /* ViewController.m */; };
+		38B4CE3E1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CE3D1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		38B4CD701EAB9DFE00E9DEF8 /* TargetImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetImageView.m; path = Views/TargetImageView.m; sourceTree = "<group>"; };
 		38B4CD731EAB9E1900E9DEF8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ViewControllers/ViewController.h; sourceTree = "<group>"; };
 		38B4CD741EAB9E1900E9DEF8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ViewControllers/ViewController.m; sourceTree = "<group>"; };
+		38B4CE3C1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSImage+CropAndResizeImage.h"; path = "Categories/NSImage+CropAndResizeImage.h"; sourceTree = "<group>"; };
+		38B4CE3D1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSImage+CropAndResizeImage.m"; path = "Categories/NSImage+CropAndResizeImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 				381D72321EA3E219003306EB /* Quick Icon.entitlements */,
 				381D71D91EA34126003306EB /* AppDelegate.h */,
 				381D71DA1EA34126003306EB /* AppDelegate.m */,
+				38B4CE3B1EB4D19E00E9DEF8 /* Categories */,
 				38B4CD091EAB4A6000E9DEF8 /* ViewControllers */,
 				38B4CD081EAB4A5700E9DEF8 /* Views */,
 				38B4CD011EAB4A1A00E9DEF8 /* jsonFiles */,
@@ -122,6 +126,15 @@
 				38B4CD741EAB9E1900E9DEF8 /* ViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		38B4CE3B1EB4D19E00E9DEF8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				38B4CE3C1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.h */,
+				38B4CE3D1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B4CE3E1EB4D1C500E9DEF8 /* NSImage+CropAndResizeImage.m in Sources */,
 				38B4CD721EAB9DFE00E9DEF8 /* TargetImageView.m in Sources */,
 				381D71DE1EA34126003306EB /* main.m in Sources */,
 				38B4CD711EAB9DFE00E9DEF8 /* DeadImageView.m in Sources */,

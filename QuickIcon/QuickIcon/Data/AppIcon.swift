@@ -10,7 +10,7 @@ import Foundation
 
 struct AppIcon: Codable {
 	let images: [Image]
-	let info: Info
+	let info: Info = Info()
 	
 	enum Default {
 		case iOS

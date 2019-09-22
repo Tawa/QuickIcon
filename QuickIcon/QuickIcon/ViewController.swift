@@ -10,6 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+	@IBOutlet private weak var label: NSTextField!
+	@IBOutlet private weak var progressIndicator: NSProgressIndicator!
+	@IBOutlet private weak var buttons: NSStackView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 

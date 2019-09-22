@@ -12,6 +12,8 @@
 		38C57ACA2337998200E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AC92337998200E8745D /* Assets.xcassets */; };
 		38C57ACD2337998200E8745D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C57ACB2337998200E8745D /* Main.storyboard */; };
 		38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */; };
+		38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */; };
+		38C57AEA23379ACA00E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AE923379ACA00E8745D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		38C57AD42337998200E8745D /* QuickIconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickIconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C57ADA2337998200E8745D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
+		38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensionsTests.swift; sourceTree = "<group>"; };
+		38C57AE923379ACA00E8745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				38C57ADA2337998200E8745D /* Info.plist */,
+				38C57AE923379ACA00E8745D /* Assets.xcassets */,
+				38C57AE623379A5600E8745D /* Extensions */,
 			);
 			path = QuickIconTests;
 			sourceTree = "<group>";
@@ -99,6 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38C57AE623379A5600E8745D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,6 +170,7 @@
 					};
 					38C57AD32337998200E8745D = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 38C57AC12337998100E8745D;
 					};
 				};
@@ -193,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C57AEA23379ACA00E8745D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +419,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DWW2N9PN49;
@@ -414,6 +432,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tawanicolas.quickicon.QuickIconTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickIcon.app/Contents/MacOS/QuickIcon";
 			};
@@ -424,6 +443,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = DWW2N9PN49;

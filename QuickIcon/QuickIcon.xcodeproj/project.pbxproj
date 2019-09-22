@@ -11,7 +11,7 @@
 		38C57AC82337998100E8745D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AC72337998100E8745D /* ViewController.swift */; };
 		38C57ACA2337998200E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AC92337998200E8745D /* Assets.xcassets */; };
 		38C57ACD2337998200E8745D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C57ACB2337998200E8745D /* Main.storyboard */; };
-		38C57AD92337998200E8745D /* QuickIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AD82337998200E8745D /* QuickIconTests.swift */; };
+		38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +33,8 @@
 		38C57ACE2337998200E8745D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38C57ACF2337998200E8745D /* QuickIcon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickIcon.entitlements; sourceTree = "<group>"; };
 		38C57AD42337998200E8745D /* QuickIconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickIconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38C57AD82337998200E8745D /* QuickIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickIconTests.swift; sourceTree = "<group>"; };
 		38C57ADA2337998200E8745D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +76,10 @@
 		38C57AC42337998100E8745D /* QuickIcon */ = {
 			isa = PBXGroup;
 			children = (
+				38C57AC92337998200E8745D /* Assets.xcassets */,
 				38C57AC52337998100E8745D /* AppDelegate.swift */,
 				38C57AC72337998100E8745D /* ViewController.swift */,
-				38C57AC92337998200E8745D /* Assets.xcassets */,
+				38C57AE323379A0500E8745D /* Extensions */,
 				38C57ACB2337998200E8745D /* Main.storyboard */,
 				38C57ACE2337998200E8745D /* Info.plist */,
 				38C57ACF2337998200E8745D /* QuickIcon.entitlements */,
@@ -89,10 +90,17 @@
 		38C57AD72337998200E8745D /* QuickIconTests */ = {
 			isa = PBXGroup;
 			children = (
-				38C57AD82337998200E8745D /* QuickIconTests.swift */,
 				38C57ADA2337998200E8745D /* Info.plist */,
 			);
 			path = QuickIconTests;
+			sourceTree = "<group>";
+		};
+		38C57AE323379A0500E8745D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C57AC82337998100E8745D /* ViewController.swift in Sources */,
+				38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +213,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C57AD92337998200E8745D /* QuickIconTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

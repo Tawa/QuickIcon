@@ -43,4 +43,14 @@ struct AppIcon: Codable {
 	static func load(preset: Preset) -> AppIcon? {
 		return load(from: preset.fileName)
 	}
+	
+	func save(to filePath: String) {
+		let jsonEncoder = JSONEncoder()
+		do {
+			let data = try jsonEncoder.encode(self)
+			try data.write(to: URL(fileURLWithPath: filePath))
+		} catch {
+			print("Could not write Contents.json: \(error.localizedDescription)")
+		}
+	}
 }

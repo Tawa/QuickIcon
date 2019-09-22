@@ -61,6 +61,20 @@ extension NSImage {
 	}
 	
 	func save(at path: String) {
-		#warning("Add Image Saving Code")
+		guard let imageData = self.tiffRepresentation,
+			let imageRep = NSBitmapImageRep.imageReps(with: imageData).first as? NSBitmapImageRep else {
+			print("Could not generate image Data")
+			return
+		}
+		let properties: [NSBitmapImageRep.PropertyKey: Any] = [
+			NSBitmapImageRep.PropertyKey.compressionFactor: 1.0
+		]
+		let data = imageRep.representation(using: .png, properties: properties)
+		
+		let wrote = FileManager.default.createFile(atPath: path, contents: data, attributes: nil)
+		
+		if !wrote {
+			print("Could not save image")
+		}
 	}
 }

@@ -872,6 +872,7 @@
                     <connections>
                         <outlet property="iMessageButton" destination="aF4-qg-ZBC" id="pxX-0e-kLa"/>
                         <outlet property="iOSButton" destination="dfA-0N-fjM" id="rPN-us-x0y"/>
+                        <outlet property="iTunesButton" destination="K1K-m5-O5e" id="HbD-Kb-zaB"/>
                         <outlet property="label" destination="HyC-O3-ffA" id="HUf-Tp-nfR"/>
                         <outlet property="macOSButton" destination="Wre-bw-tK7" id="SBR-7Z-Sz8"/>
                         <outlet property="progressIndicator" destination="2nI-sp-2Wx" id="cG8-LQ-Duw"/>

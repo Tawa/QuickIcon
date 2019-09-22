@@ -43,7 +43,8 @@ class ViewController: NSViewController {
 			
 			let generator = AppIconGenerator(appIcon: icon,
 											 image: image,
-											 filePath: filePath)
+											 filePath: filePath,
+											 folderName: "iOS")
 			generator.start {
 				DispatchQueue.main.async {
 					self.progressIndicator.increment(by: 1)

@@ -13,6 +13,7 @@ class AppIconGenerator {
 	private let appIcon: AppIcon
 	private let image: NSImage
 	private let filePath: URL
+	private let folderName: String
 	
 	private var fileName: String {
 		return filePath.deletingPathExtension().lastPathComponent
@@ -20,10 +21,14 @@ class AppIconGenerator {
 	
 	private var completion: (() -> Void)?
 	
-	init(appIcon: AppIcon, image: NSImage, filePath: URL) {
+	init(appIcon: AppIcon,
+		 image: NSImage,
+		 filePath: URL,
+		 folderName: String) {
 		self.appIcon = appIcon
 		self.image = image
 		self.filePath = filePath
+		self.folderName = folderName
 	}
 	
 	func start(_ completion: @escaping () -> Void) {
@@ -65,23 +70,23 @@ class AppIconGenerator {
 	}
 	
 	private func saveContentsFile(path: String) {
-		#warning("Add Code That Saves Contents.json")
+		appIcon.save(to: path.appending("/Contents.json"))
 	}
 	
 	private func generate(in directory: String) {
-		let path = directory.appending("/JSONNAME/AppIcon.appiconset")
+		let path = directory.appending("/\(folderName)/AppIcon.appiconset")
 		
 		buildFolder(path: path)
 		saveContentsFile(path: path)
 		
 		for image in appIcon.images {
-			let imagePath = path.appending(image.filename)
+			let imagePath = path.appending("/\(image.filename)")
 			guard let resizedImage = self.image.cropAndResize(newSize: image.actualSize)
 				else {
 					continue
 			}
 			
-			resizedImage.save(at: path.appending("/\(fileName)"))
+			resizedImage.save(at: imagePath)
 			
 			#warning("Increase Progress")
 		}

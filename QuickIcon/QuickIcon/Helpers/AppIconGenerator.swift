@@ -37,7 +37,7 @@ class AppIconGenerator {
 		panel.beginSheetModal(for: NSApplication.shared.windows[0]) { (result) in
 			switch result {
 			case .OK:
-				guard let directory = panel.url?.path.appending(self.fileName) else {
+				guard let directory = panel.url?.path.appending("/\(self.fileName)") else {
 					self.finish()
 					return
 				}

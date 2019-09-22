@@ -16,6 +16,7 @@ class ViewController: NSViewController {
 			progressIndicator.minValue = 0
 			progressIndicator.maxValue = 20
 			progressIndicator.isDisplayedWhenStopped = false
+			progressIndicator.isHidden = true
 		}
 	}
 	@IBOutlet private weak var iOSButton: NSButton!
@@ -31,24 +32,34 @@ class ViewController: NSViewController {
 		guard let image = image else { return }
 		guard let filePath = filePath else { return }
 		
-		let icons = iconTypes.compactMap { AppIcon.load(preset: $0) }
+		let iconsDetails: [AppIconDetails] = iconTypes.compactMap {
+			guard let icon = AppIcon.load(preset: $0) else { return nil }
+			return AppIconDetails(appIcon: icon,
+								  folderName: $0.fileName)
+		}
 		
-		let totalImages: Int = icons.reduce(0) { $0 + $1.images.count }
+		let totalImages: Int = iconsDetails.reduce(0) { $0 + $1.appIcon.images.count }
 		
 		progressIndicator.minValue = 0
 		progressIndicator.maxValue = Double(totalImages)
+		progressIndicator.doubleValue = 0
 		
-		for i in 0..<icons.count {
-			let icon = icons[i]
+		for i in 0..<iconsDetails.count {
+			let icon = iconsDetails[i]
 			
-			let generator = AppIconGenerator(appIcon: icon,
+			let generator = AppIconGenerator(appIcon: icon.appIcon,
 											 image: image,
 											 filePath: filePath,
-											 folderName: "iOS")
-			generator.start {
-				DispatchQueue.main.async {
-					self.progressIndicator.increment(by: 1)
+											 folderName: icon.folderName)
+			
+			progressIndicator.isHidden = false
+			generator.start(updateProgress: {
+				self.progressIndicator.increment(by: 1)
+			}) { completed in
+				if completed {
+					self.showAlert(message: "Done")
 				}
+				self.progressIndicator.isHidden = true
 			}
 		}
 	}

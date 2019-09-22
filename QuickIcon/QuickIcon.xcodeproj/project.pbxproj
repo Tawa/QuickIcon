@@ -22,6 +22,7 @@
 		38C57B5B2337CBD100E8745D /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5A2337CBD100E8745D /* Info.swift */; };
 		38C57B5D2337CD8E00E8745D /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5C2337CD8E00E8745D /* AppIconTests.swift */; };
 		38C57B5F2337D7FE00E8745D /* AppIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */; };
+		38F52C6D233815380078C029 /* AppIconDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F52C6C233815380078C029 /* AppIconDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		38C57B5A2337CBD100E8745D /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		38C57B5C2337CD8E00E8745D /* AppIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconGenerator.swift; sourceTree = "<group>"; };
+		38F52C6C233815380078C029 /* AppIconDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		38C57AEB23379E8900E8745D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				38F52C6C233815380078C029 /* AppIconDetails.swift */,
 				38C57B4B2337A7C100E8745D /* AppIcon.swift */,
 				38C57B4D2337A7D100E8745D /* Image.swift */,
 				38C57B5A2337CBD100E8745D /* Info.swift */,
@@ -291,6 +294,7 @@
 				38C57B572337B45400E8745D /* DeadImageView.swift in Sources */,
 				38C57B5F2337D7FE00E8745D /* AppIconGenerator.swift in Sources */,
 				38C57B592337B5F200E8745D /* TargetImageView.swift in Sources */,
+				38F52C6D233815380078C029 /* AppIconDetails.swift in Sources */,
 				38C57B4E2337A7D100E8745D /* Image.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
 			);

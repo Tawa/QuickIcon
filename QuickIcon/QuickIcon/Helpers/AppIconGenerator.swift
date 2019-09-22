@@ -19,7 +19,8 @@ class AppIconGenerator {
 		return filePath.deletingPathExtension().lastPathComponent
 	}
 	
-	private var completion: (() -> Void)?
+	private var updateProgress: (() -> Void)?
+	private var completion: ((Bool) -> Void)?
 	
 	init(appIcon: AppIcon,
 		 image: NSImage,
@@ -31,7 +32,8 @@ class AppIconGenerator {
 		self.folderName = folderName
 	}
 	
-	func start(_ completion: @escaping () -> Void) {
+	func start(updateProgress: @escaping () -> Void, _ completion: @escaping (Bool) -> Void) {
+		self.updateProgress = updateProgress
 		self.completion = completion
 		
 		let panel = NSOpenPanel()
@@ -50,13 +52,16 @@ class AppIconGenerator {
 					self.generate(in: directory)
 				}
 			default:
+				completion(false)
 				break
 			}
 		}
 	}
 	
 	private func finish() {
-		completion?()
+		DispatchQueue.main.async {
+			self.completion?(true)
+		}
 	}
 	
 	private func buildFolder(path: String) {
@@ -87,8 +92,13 @@ class AppIconGenerator {
 			}
 			
 			resizedImage.save(at: imagePath)
-			
-			#warning("Increase Progress")
+			DispatchQueue.main.async {
+				self.updateProgress?()
+			}
+		}
+		
+		DispatchQueue.main.async {
+			self.completion?(true)
 		}
 	}
 }

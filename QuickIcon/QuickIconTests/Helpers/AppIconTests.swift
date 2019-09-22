@@ -12,7 +12,7 @@ import XCTest
 class AppIconTests: XCTestCase {
 
 	func testiOSJSONFile() {
-		let appIcon = AppIcon.load(.iOS)
+		let appIcon = AppIcon.load(preset: .iOS)
 		
 		XCTAssertNotNil(appIcon)
 		XCTAssertEqual(appIcon?.images.count, 18)

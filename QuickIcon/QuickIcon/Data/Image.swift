@@ -13,6 +13,8 @@ struct Image: Codable {
 	private let size: String
 	private let scale: String
 	let filename: String
+	let actualScale: Int
+	let actualSize: CGSize
 	
 	enum CodingKeys: String, CodingKey {
 		case idiom
@@ -31,28 +33,23 @@ struct Image: Codable {
 		let defaultFileName = "\(idiom)-Icon-\(size)@\(scale).png"
 		let readFileName = try? container.decode(String.self, forKey: .filename)
 		filename = readFileName ?? defaultFileName
-	}
-	
-	lazy var actualScale: Int = {
-		guard let scaleString = scale.components(separatedBy: "x").first,
-			let scaleInt = Int(scaleString)
-		else {
-			return 1
+		
+		if let scaleString = scale.components(separatedBy: "x").first,
+			let scaleInt = Int(scaleString) {
+			actualScale = scaleInt
+		} else {
+			actualScale = 1
 		}
 		
-		return scaleInt
-	}()
-	
-	lazy var actualSize: CGSize = {
 		let sizeComponents = self.size.components(separatedBy: "x")
-		guard sizeComponents.count == 2,
+		if sizeComponents.count == 2,
 			let width = Double(sizeComponents[0]),
 			let height = Double(sizeComponents[1])
-		else {
-			return CGSize(width: 1, height: 1)
+		{
+			actualSize = CGSize(width: CGFloat(width) * CGFloat(actualScale),
+								height: CGFloat(height) * CGFloat(actualScale))
+		} else {
+			actualSize = CGSize(width: 1, height: 1)
 		}
-		
-		return CGSize(width: CGFloat(width) * CGFloat(actualScale),
-					  height: CGFloat(height) * CGFloat(actualScale))
-	}()
+	}
 }

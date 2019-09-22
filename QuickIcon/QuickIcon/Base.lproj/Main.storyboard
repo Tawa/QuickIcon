@@ -702,7 +702,7 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--Delegate-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -721,6 +721,9 @@
                                     <panGestureRecognizer delaysPrimaryMouseButtonEvents="YES" id="Nbt-vd-zGG"/>
                                 </gestureRecognizers>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" id="7ft-tV-PH2"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="CNg-Fy-tTs"/>
+                                </connections>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-ss-nb0" customClass="DeadImageView" customModule="QuickIcon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="512" height="512"/>
@@ -745,6 +748,9 @@
                                                 <buttonCell key="cell" type="push" title="iOS" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zej-bB-Bfu">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
+                                                    <connections>
+                                                        <action selector="generateiOS" target="rPt-NT-nkU" id="XOe-s8-Plm"/>
+                                                    </connections>
                                                 </buttonCell>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="U61-3f-vm9">

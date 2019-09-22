@@ -12,7 +12,7 @@ struct AppIcon: Codable {
 	let images: [Image]
 	let info: Info = Info()
 	
-	enum Default {
+	enum Preset {
 		case iOS
 		
 		var fileName: String {
@@ -40,7 +40,7 @@ struct AppIcon: Codable {
 		}
 	}
 	
-	static func load(_ defaultFile: Default) -> AppIcon? {
-		return load(from: defaultFile.fileName)
+	static func load(preset: Preset) -> AppIcon? {
+		return load(from: preset.fileName)
 	}
 }

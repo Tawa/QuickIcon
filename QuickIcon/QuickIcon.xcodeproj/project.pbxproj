@@ -21,6 +21,7 @@
 		38C57B592337B5F200E8745D /* TargetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B582337B5F200E8745D /* TargetImageView.swift */; };
 		38C57B5B2337CBD100E8745D /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5A2337CBD100E8745D /* Info.swift */; };
 		38C57B5D2337CD8E00E8745D /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5C2337CD8E00E8745D /* AppIconTests.swift */; };
+		38C57B5F2337D7FE00E8745D /* AppIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		38C57B582337B5F200E8745D /* TargetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetImageView.swift; sourceTree = "<group>"; };
 		38C57B5A2337CBD100E8745D /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		38C57B5C2337CD8E00E8745D /* AppIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
+		38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		38C57B4F2337A9FE00E8745D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				38C57B5B2337CBD100E8745D /* Info.swift in Sources */,
 				38C57B4C2337A7C100E8745D /* AppIcon.swift in Sources */,
 				38C57B572337B45400E8745D /* DeadImageView.swift in Sources */,
+				38C57B5F2337D7FE00E8745D /* AppIconGenerator.swift in Sources */,
 				38C57B592337B5F200E8745D /* TargetImageView.swift in Sources */,
 				38C57B4E2337A7D100E8745D /* Image.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
@@ -373,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -445,7 +449,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = DWW2N9PN49;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = QuickIcon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,7 +472,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = DWW2N9PN49;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = QuickIcon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

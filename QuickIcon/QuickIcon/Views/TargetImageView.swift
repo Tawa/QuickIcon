@@ -8,13 +8,13 @@
 
 import Cocoa
 
-protocol TargetImageViewDelegate: class {
+@objc protocol TargetImageViewDelegate: class {
 	func received(file filePath: URL, image: NSImage)
 }
 
 class TargetImageView: NSImageView {
 	
-	weak var delegate: TargetImageViewDelegate?
+	@IBOutlet weak var delegate: TargetImageViewDelegate?
 	private var hasBorders: Bool = false {
 		didSet {
 			layer?.borderWidth = hasBorders ? 5 : 0

@@ -59,4 +59,8 @@ extension NSImage {
 		newImage.addRepresentation(rep)
 		return newImage
 	}
+	
+	func save(at path: String) {
+		#warning("Add Image Saving Code")
+	}
 }

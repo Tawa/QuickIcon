@@ -15,6 +15,10 @@
 		38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */; };
 		38C57AEA23379ACA00E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AE923379ACA00E8745D /* Assets.xcassets */; };
 		38C57B1C23379F2A00E8745D /* iOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38C57B1B23379F2A00E8745D /* iOS.json */; };
+		38C57B4C2337A7C100E8745D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B4B2337A7C100E8745D /* AppIcon.swift */; };
+		38C57B4E2337A7D100E8745D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B4D2337A7D100E8745D /* Icon.swift */; };
+		38C57B512337AAD200E8745D /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B502337AAD200E8745D /* JSONLoader.swift */; };
+		38C57B542337AC4700E8745D /* JSONLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B532337AC4700E8745D /* JSONLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,10 @@
 		38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensionsTests.swift; sourceTree = "<group>"; };
 		38C57AE923379ACA00E8745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38C57B1B23379F2A00E8745D /* iOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iOS.json; sourceTree = "<group>"; };
+		38C57B4B2337A7C100E8745D /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		38C57B4D2337A7D100E8745D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		38C57B502337AAD200E8745D /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		38C57B532337AC4700E8745D /* JSONLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 				38C57AEC23379E9500E8745D /* JSONFiles */,
 				38C57AEB23379E8900E8745D /* Data */,
 				38C57AE323379A0500E8745D /* Extensions */,
+				38C57B4F2337A9FE00E8745D /* Helpers */,
 				38C57ACB2337998200E8745D /* Main.storyboard */,
 				38C57ACE2337998200E8745D /* Info.plist */,
 				38C57ACF2337998200E8745D /* QuickIcon.entitlements */,
@@ -101,6 +110,7 @@
 				38C57ADA2337998200E8745D /* Info.plist */,
 				38C57AE923379ACA00E8745D /* Assets.xcassets */,
 				38C57AE623379A5600E8745D /* Extensions */,
+				38C57B522337AC2900E8745D /* Helpers */,
 			);
 			path = QuickIconTests;
 			sourceTree = "<group>";
@@ -124,6 +134,8 @@
 		38C57AEB23379E8900E8745D /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				38C57B4B2337A7C100E8745D /* AppIcon.swift */,
+				38C57B4D2337A7D100E8745D /* Icon.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -134,6 +146,22 @@
 				38C57B1B23379F2A00E8745D /* iOS.json */,
 			);
 			path = JSONFiles;
+			sourceTree = "<group>";
+		};
+		38C57B4F2337A9FE00E8745D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				38C57B502337AAD200E8745D /* JSONLoader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		38C57B522337AC2900E8745D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				38C57B532337AC4700E8745D /* JSONLoaderTests.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +269,9 @@
 			files = (
 				38C57AC82337998100E8745D /* ViewController.swift in Sources */,
 				38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */,
+				38C57B512337AAD200E8745D /* JSONLoader.swift in Sources */,
+				38C57B4C2337A7C100E8745D /* AppIcon.swift in Sources */,
+				38C57B4E2337A7D100E8745D /* Icon.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C57B542337AC4700E8745D /* JSONLoaderTests.swift in Sources */,
 				38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

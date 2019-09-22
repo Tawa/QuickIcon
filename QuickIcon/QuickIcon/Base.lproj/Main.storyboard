@@ -711,7 +711,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="552" height="593"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="iOP-U5-IPf" customClass="TargetImageView">
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="iOP-U5-IPf" customClass="TargetImageView" customModule="QuickIcon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="512" height="512"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iOP-U5-IPf" secondAttribute="height" multiplier="1:1" id="IEb-4u-3gV"/>
@@ -722,7 +722,7 @@
                                 </gestureRecognizers>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" id="7ft-tV-PH2"/>
                             </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-ss-nb0" customClass="DeadImageView">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1C-ss-nb0" customClass="DeadImageView" customModule="QuickIcon" customModuleProvider="target">
                                 <rect key="frame" x="20" y="61" width="512" height="512"/>
                                 <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="gridoverlay" id="svY-8v-2Ij"/>
                             </imageView>
@@ -828,12 +828,17 @@
                             <constraint firstAttribute="trailing" secondItem="iOP-U5-IPf" secondAttribute="trailing" constant="20" id="pyu-3w-ywe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttons" destination="7Tw-ew-5vP" id="Rq0-fR-WWG"/>
+                        <outlet property="label" destination="HyC-O3-ffA" id="HUf-Tp-nfR"/>
+                        <outlet property="progressIndicator" destination="2nI-sp-2Wx" id="cG8-LQ-Duw"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="75" y="964"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gridoverlay" width="128" height="128"/>
+        <image name="gridoverlay" width="512" height="512"/>
     </resources>
 </document>

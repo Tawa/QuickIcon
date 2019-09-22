@@ -1,5 +1,5 @@
 //
-//  JSONLoaderTests.swift
+//  AppIconTests.swift
 //  QuickIconTests
 //
 //  Created by Tawa Nicolas on 22.09.19.
@@ -9,12 +9,10 @@
 import XCTest
 @testable import QuickIcon
 
-class JSONLoaderTests: XCTestCase {
+class AppIconTests: XCTestCase {
 
-    func testiOSJsonFile() {
-		let jsonLoader = JSONLoader()
-		
-		let appIcon = jsonLoader.load(fileName: "iOS")
+	func testiOSJSONFile() {
+		let appIcon = AppIcon.load(.iOS)
 		
 		XCTAssertNotNil(appIcon)
 		XCTAssertEqual(appIcon?.images.count, 18)
@@ -26,5 +24,12 @@ class JSONLoaderTests: XCTestCase {
 		var iPadIcon = appIcon!.images[16]
 		XCTAssertEqual(iPadIcon.actualScale, 2)
 		XCTAssertEqual(iPadIcon.actualSize, CGSize(width: 167, height: 167))
-    }
+	}
+	
+	func testNoFile() {
+		let appIcon = AppIcon.load(from: "randomfilename")
+		
+		XCTAssertNil(appIcon)
+	}
+
 }

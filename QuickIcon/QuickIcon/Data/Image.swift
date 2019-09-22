@@ -1,5 +1,5 @@
 //
-//  Icon.swift
+//  Image.swift
 //  QuickIcon
 //
 //  Created by Tawa Nicolas on 22.09.19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Icon: Decodable {
+struct Image: Codable {
 	let idiom: String
 	let size: String
 	let filename: String

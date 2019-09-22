@@ -16,11 +16,11 @@
 		38C57AEA23379ACA00E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AE923379ACA00E8745D /* Assets.xcassets */; };
 		38C57B1C23379F2A00E8745D /* iOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38C57B1B23379F2A00E8745D /* iOS.json */; };
 		38C57B4C2337A7C100E8745D /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B4B2337A7C100E8745D /* AppIcon.swift */; };
-		38C57B4E2337A7D100E8745D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B4D2337A7D100E8745D /* Icon.swift */; };
-		38C57B512337AAD200E8745D /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B502337AAD200E8745D /* JSONLoader.swift */; };
-		38C57B542337AC4700E8745D /* JSONLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B532337AC4700E8745D /* JSONLoaderTests.swift */; };
+		38C57B4E2337A7D100E8745D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B4D2337A7D100E8745D /* Image.swift */; };
 		38C57B572337B45400E8745D /* DeadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B562337B45400E8745D /* DeadImageView.swift */; };
 		38C57B592337B5F200E8745D /* TargetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B582337B5F200E8745D /* TargetImageView.swift */; };
+		38C57B5B2337CBD100E8745D /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5A2337CBD100E8745D /* Info.swift */; };
+		38C57B5D2337CD8E00E8745D /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5C2337CD8E00E8745D /* AppIconTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +48,11 @@
 		38C57AE923379ACA00E8745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38C57B1B23379F2A00E8745D /* iOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iOS.json; sourceTree = "<group>"; };
 		38C57B4B2337A7C100E8745D /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
-		38C57B4D2337A7D100E8745D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		38C57B502337AAD200E8745D /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
-		38C57B532337AC4700E8745D /* JSONLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoaderTests.swift; sourceTree = "<group>"; };
+		38C57B4D2337A7D100E8745D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		38C57B562337B45400E8745D /* DeadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadImageView.swift; sourceTree = "<group>"; };
 		38C57B582337B5F200E8745D /* TargetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetImageView.swift; sourceTree = "<group>"; };
+		38C57B5A2337CBD100E8745D /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		38C57B5C2337CD8E00E8745D /* AppIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				38C57B4B2337A7C100E8745D /* AppIcon.swift */,
-				38C57B4D2337A7D100E8745D /* Icon.swift */,
+				38C57B4D2337A7D100E8745D /* Image.swift */,
+				38C57B5A2337CBD100E8745D /* Info.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -156,7 +157,6 @@
 		38C57B4F2337A9FE00E8745D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				38C57B502337AAD200E8745D /* JSONLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 		38C57B522337AC2900E8745D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				38C57B532337AC4700E8745D /* JSONLoaderTests.swift */,
+				38C57B5C2337CD8E00E8745D /* AppIconTests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,11 +283,11 @@
 			files = (
 				38C57AC82337998100E8745D /* ViewController.swift in Sources */,
 				38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */,
-				38C57B512337AAD200E8745D /* JSONLoader.swift in Sources */,
+				38C57B5B2337CBD100E8745D /* Info.swift in Sources */,
 				38C57B4C2337A7C100E8745D /* AppIcon.swift in Sources */,
 				38C57B572337B45400E8745D /* DeadImageView.swift in Sources */,
 				38C57B592337B5F200E8745D /* TargetImageView.swift in Sources */,
-				38C57B4E2337A7D100E8745D /* Icon.swift in Sources */,
+				38C57B4E2337A7D100E8745D /* Image.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38C57B542337AC4700E8745D /* JSONLoaderTests.swift in Sources */,
+				38C57B5D2337CD8E00E8745D /* AppIconTests.swift in Sources */,
 				38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

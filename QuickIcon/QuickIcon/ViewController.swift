@@ -25,7 +25,10 @@ class ViewController: NSViewController {
 		// Update the view, if already loaded.
 		}
 	}
-
-
 }
 
+extension ViewController: TargetImageViewDelegate {
+	func received(file filePath: URL, image: NSImage) {
+		label.isHidden = true
+	}
+}

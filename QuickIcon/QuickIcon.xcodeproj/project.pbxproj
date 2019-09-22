@@ -14,6 +14,7 @@
 		38C57AE523379A0E00E8745D /* NSImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */; };
 		38C57AE823379A8D00E8745D /* NSImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */; };
 		38C57AEA23379ACA00E8745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C57AE923379ACA00E8745D /* Assets.xcassets */; };
+		38C57B1C23379F2A00E8745D /* iOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38C57B1B23379F2A00E8745D /* iOS.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		38C57AE423379A0E00E8745D /* NSImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extensions.swift"; sourceTree = "<group>"; };
 		38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageExtensionsTests.swift; sourceTree = "<group>"; };
 		38C57AE923379ACA00E8745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38C57B1B23379F2A00E8745D /* iOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iOS.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,8 @@
 				38C57AC92337998200E8745D /* Assets.xcassets */,
 				38C57AC52337998100E8745D /* AppDelegate.swift */,
 				38C57AC72337998100E8745D /* ViewController.swift */,
+				38C57AEC23379E9500E8745D /* JSONFiles */,
+				38C57AEB23379E8900E8745D /* Data */,
 				38C57AE323379A0500E8745D /* Extensions */,
 				38C57ACB2337998200E8745D /* Main.storyboard */,
 				38C57ACE2337998200E8745D /* Info.plist */,
@@ -115,6 +119,21 @@
 				38C57AE723379A8D00E8745D /* NSImageExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38C57AEB23379E8900E8745D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		38C57AEC23379E9500E8745D /* JSONFiles */ = {
+			isa = PBXGroup;
+			children = (
+				38C57B1B23379F2A00E8745D /* iOS.json */,
+			);
+			path = JSONFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +220,7 @@
 			files = (
 				38C57ACA2337998200E8745D /* Assets.xcassets in Resources */,
 				38C57ACD2337998200E8745D /* Main.storyboard in Resources */,
+				38C57B1C23379F2A00E8745D /* iOS.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

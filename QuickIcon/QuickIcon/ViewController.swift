@@ -11,9 +11,19 @@ import Cocoa
 class ViewController: NSViewController {
 
 	@IBOutlet private weak var label: NSTextField!
-	@IBOutlet private weak var progressIndicator: NSProgressIndicator!
-	@IBOutlet private weak var buttons: NSStackView!
-	
+	@IBOutlet private weak var progressIndicator: NSProgressIndicator! {
+		didSet {
+			progressIndicator.minValue = 0
+			progressIndicator.maxValue = 20
+			progressIndicator.isDisplayedWhenStopped = false
+		}
+	}
+	@IBOutlet private weak var iOSButton: NSButton!
+	@IBOutlet private weak var macOSButton: NSButton!
+	@IBOutlet private weak var iMessageButton: NSButton!
+	@IBOutlet private weak var watchOSButton: NSButton!
+	@IBOutlet private weak var iTunesButton: NSButton!
+
 	private var image: NSImage? = nil
 	private var filePath: URL? = nil
 	
@@ -42,8 +52,39 @@ class ViewController: NSViewController {
 		}
 	}
 	
-	@IBAction private func generateiOS(_ sender: NSButton) {
-		generate(iconTypes: [.iOS])
+	@IBAction private func generate(_ sender: NSButton) {
+		guard image != nil else {
+			showNoImageAlert()
+			return
+		}
+		
+		var iconTypes = [AppIcon.Preset]()
+		
+		if iOSButton.state == .on {
+			iconTypes.append(.iOS)
+		}
+		
+		guard !iconTypes.isEmpty else {
+			showNoSelectionsAlert()
+			
+			return
+		}
+		generate(iconTypes: iconTypes)
+	}
+	
+	private func showAlert(message: String) {
+		let alert = NSAlert()
+		alert.messageText = message
+		alert.addButton(withTitle: "Ok")
+		alert.runModal()
+	}
+	
+	private func showNoSelectionsAlert() {
+		showAlert(message: "No selections!\nPlease select which files you want to generate first.")
+	}
+	
+	private func showNoImageAlert() {
+		showAlert(message: "Image missing!\nPlease add an image file.")
 	}
 }
 

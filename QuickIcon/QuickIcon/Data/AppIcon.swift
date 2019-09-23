@@ -12,14 +12,13 @@ struct AppIcon: Codable {
 	let images: [Image]
 	let info: Info = Info()
 	
-	enum Preset {
+	enum Preset: String {
 		case iOS
+		case macOS
+		case iTunes
 		
 		var fileName: String {
-			switch self {
-			case .iOS:
-				return "iOS"
-			}
+			return self.rawValue
 		}
 	}
 	

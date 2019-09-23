@@ -17,15 +17,30 @@ class AppIconTests: XCTestCase {
 		XCTAssertNotNil(appIcon)
 		XCTAssertEqual(appIcon?.images.count, 18)
 		
-		var first = appIcon!.images[0]
+		let first = appIcon!.images[0]
 		XCTAssertEqual(first.actualScale, 2)
 		XCTAssertEqual(first.actualSize, CGSize(width: 40, height: 40))
 		
-		var iPadIcon = appIcon!.images[16]
+		let iPadIcon = appIcon!.images[16]
 		XCTAssertEqual(iPadIcon.actualScale, 2)
 		XCTAssertEqual(iPadIcon.actualSize, CGSize(width: 167, height: 167))
 	}
-	
+
+	func testmacOSJSONFile() {
+		let appIcon = AppIcon.load(preset: .macOS)
+		
+		XCTAssertNotNil(appIcon)
+		XCTAssertEqual(appIcon?.images.count, 10)
+		
+		let first = appIcon!.images[0]
+		XCTAssertEqual(first.actualScale, 1)
+		XCTAssertEqual(first.actualSize, CGSize(width: 16, height: 16))
+		
+		let iPadIcon = appIcon!.images[9]
+		XCTAssertEqual(iPadIcon.actualScale, 2)
+		XCTAssertEqual(iPadIcon.actualSize, CGSize(width: 1024, height: 1024))
+	}
+
 	func testNoFile() {
 		let appIcon = AppIcon.load(from: "randomfilename")
 		

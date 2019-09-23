@@ -21,16 +21,13 @@ class ViewController: NSViewController {
 	}
 	@IBOutlet private weak var iOSButton: NSButton!
 	@IBOutlet private weak var macOSButton: NSButton!
-	@IBOutlet private weak var iMessageButton: NSButton!
-	@IBOutlet private weak var watchOSButton: NSButton!
 	@IBOutlet private weak var iTunesButton: NSButton!
 
 	private var image: NSImage? = nil
 	private var filePath: URL? = nil
 	
-	private func generate(iconTypes: [AppIcon.Preset]) {
+	private func generate(iconTypes: [AppIcon.Preset], in directory: String) {
 		guard let image = image else { return }
-		guard let filePath = filePath else { return }
 		
 		let iconsDetails: [AppIconDetails] = iconTypes.compactMap {
 			guard let icon = AppIcon.load(preset: $0) else { return nil }
@@ -44,27 +41,31 @@ class ViewController: NSViewController {
 		progressIndicator.maxValue = Double(totalImages)
 		progressIndicator.doubleValue = 0
 		
+		progressIndicator.isHidden = false
 		for i in 0..<iconsDetails.count {
 			let icon = iconsDetails[i]
 			
+			print("Generating for: \(i)")
 			let generator = AppIconGenerator(appIcon: icon.appIcon,
 											 image: image,
-											 filePath: filePath,
 											 folderName: icon.folderName)
 			
-			progressIndicator.isHidden = false
-			generator.start(updateProgress: {
+			generator.start(in: directory, updateProgress: {
 				self.progressIndicator.increment(by: 1)
 			}) { completed in
-				if completed {
-					self.showAlert(message: "Done")
+				print("Done: \(completed) : \(i)")
+				if i == iconsDetails.count - 1 {
+					if completed {
+						self.showAlert(message: "Done")
+					}
+					self.progressIndicator.isHidden = true
 				}
-				self.progressIndicator.isHidden = true
 			}
 		}
 	}
 	
 	@IBAction private func generate(_ sender: NSButton) {
+		guard let filePath = filePath else { return }
 		guard image != nil else {
 			showNoImageAlert()
 			return
@@ -76,12 +77,23 @@ class ViewController: NSViewController {
 			iconTypes.append(.iOS)
 		}
 		
+		if macOSButton.state == .on {
+			iconTypes.append(.macOS)
+		}
+		
+		if iTunesButton.state == .on {
+			iconTypes.append(.iTunes)
+		}
+		
 		guard !iconTypes.isEmpty else {
 			showNoSelectionsAlert()
 			
 			return
 		}
-		generate(iconTypes: iconTypes)
+		
+		FolderSelector(filePath: filePath).getFolder { (directory) in
+			self.generate(iconTypes: iconTypes, in: directory)
+		}
 	}
 	
 	private func showAlert(message: String) {

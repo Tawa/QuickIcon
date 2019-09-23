@@ -12,50 +12,24 @@ class AppIconGenerator {
 	
 	private let appIcon: AppIcon
 	private let image: NSImage
-	private let filePath: URL
 	private let folderName: String
-	
-	private var fileName: String {
-		return filePath.deletingPathExtension().lastPathComponent
-	}
 	
 	private var updateProgress: (() -> Void)?
 	private var completion: ((Bool) -> Void)?
 	
 	init(appIcon: AppIcon,
 		 image: NSImage,
-		 filePath: URL,
 		 folderName: String) {
 		self.appIcon = appIcon
 		self.image = image
-		self.filePath = filePath
 		self.folderName = folderName
 	}
 	
-	func start(updateProgress: @escaping () -> Void, _ completion: @escaping (Bool) -> Void) {
+	func start(in directory: String, updateProgress: @escaping () -> Void, _ completion: @escaping (Bool) -> Void) {
 		self.updateProgress = updateProgress
 		self.completion = completion
 		
-		let panel = NSOpenPanel()
-		panel.canCreateDirectories = true
-		panel.canChooseFiles = false
-		panel.canChooseDirectories = true
-		panel.directoryURL = filePath.deletingLastPathComponent()
-		panel.beginSheetModal(for: NSApplication.shared.windows[0]) { (result) in
-			switch result {
-			case .OK:
-				guard let directory = panel.url?.path.appending("/\(self.fileName)") else {
-					self.finish()
-					return
-				}
-				DispatchQueue.global(qos: .background).async {
-					self.generate(in: directory)
-				}
-			default:
-				completion(false)
-				break
-			}
-		}
+		self.generate(in: directory)
 	}
 	
 	private func finish() {

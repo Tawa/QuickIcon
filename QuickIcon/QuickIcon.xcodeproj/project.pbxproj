@@ -23,6 +23,9 @@
 		38C57B5D2337CD8E00E8745D /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5C2337CD8E00E8745D /* AppIconTests.swift */; };
 		38C57B5F2337D7FE00E8745D /* AppIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */; };
 		38F52C6D233815380078C029 /* AppIconDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F52C6C233815380078C029 /* AppIconDetails.swift */; };
+		38F52C6F23394C7E0078C029 /* macOS.json in Resources */ = {isa = PBXBuildFile; fileRef = 38F52C6E23394C7E0078C029 /* macOS.json */; };
+		38F52D95233951CD0078C029 /* iTunes.json in Resources */ = {isa = PBXBuildFile; fileRef = 38F52D94233951CD0078C029 /* iTunes.json */; };
+		38F52D972339531A0078C029 /* FolderSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F52D962339531A0078C029 /* FolderSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		38C57B5C2337CD8E00E8745D /* AppIconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconGenerator.swift; sourceTree = "<group>"; };
 		38F52C6C233815380078C029 /* AppIconDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconDetails.swift; sourceTree = "<group>"; };
+		38F52C6E23394C7E0078C029 /* macOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = macOS.json; sourceTree = "<group>"; };
+		38F52D94233951CD0078C029 /* iTunes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = iTunes.json; sourceTree = "<group>"; };
+		38F52D962339531A0078C029 /* FolderSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				38C57B1B23379F2A00E8745D /* iOS.json */,
+				38F52C6E23394C7E0078C029 /* macOS.json */,
+				38F52D94233951CD0078C029 /* iTunes.json */,
 			);
 			path = JSONFiles;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				38C57B5E2337D7FE00E8745D /* AppIconGenerator.swift */,
+				38F52D962339531A0078C029 /* FolderSelector.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -267,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C57ACA2337998200E8745D /* Assets.xcassets in Resources */,
+				38F52C6F23394C7E0078C029 /* macOS.json in Resources */,
 				38C57ACD2337998200E8745D /* Main.storyboard in Resources */,
+				38F52D95233951CD0078C029 /* iTunes.json in Resources */,
 				38C57B1C23379F2A00E8745D /* iOS.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +308,7 @@
 				38F52C6D233815380078C029 /* AppIconDetails.swift in Sources */,
 				38C57B4E2337A7D100E8745D /* Image.swift in Sources */,
 				38C57AC62337998100E8745D /* AppDelegate.swift in Sources */,
+				38F52D972339531A0078C029 /* FolderSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

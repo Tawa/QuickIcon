@@ -748,10 +748,10 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <stackView distribution="fillProportionally" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ab-WT-641">
-                                                    <rect key="frame" x="0.0" y="367" width="112" height="182"/>
+                                                    <rect key="frame" x="0.0" y="419" width="112" height="130"/>
                                                     <subviews>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dfA-0N-fjM">
-                                                            <rect key="frame" x="-2" y="162" width="44" height="22"/>
+                                                            <rect key="frame" x="-2" y="110" width="44" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="mFm-Mg-RQu"/>
                                                             </constraints>
@@ -761,31 +761,11 @@
                                                             </buttonCell>
                                                         </button>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-bw-tK7">
-                                                            <rect key="frame" x="-2" y="136" width="66" height="22"/>
+                                                            <rect key="frame" x="-2" y="84" width="66" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="ds8-58-bKf"/>
                                                             </constraints>
                                                             <buttonCell key="cell" type="check" title="macOS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="d6o-eI-g8n">
-                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
-                                                            </buttonCell>
-                                                        </button>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aF4-qg-ZBC">
-                                                            <rect key="frame" x="-2" y="110" width="80" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="18" id="4ov-bJ-cne"/>
-                                                            </constraints>
-                                                            <buttonCell key="cell" type="check" title="iMessage" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yuV-5y-O9l">
-                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
-                                                            </buttonCell>
-                                                        </button>
-                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0HW-28-ggo">
-                                                            <rect key="frame" x="-2" y="84" width="77" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="18" id="F6T-VP-1EM"/>
-                                                            </constraints>
-                                                            <buttonCell key="cell" type="check" title="watchOS" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Bzw-xy-9Yr">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
@@ -823,12 +803,8 @@
                                                         <integer value="1000"/>
                                                         <integer value="1000"/>
                                                         <integer value="1000"/>
-                                                        <integer value="1000"/>
-                                                        <integer value="1000"/>
                                                     </visibilityPriorities>
                                                     <customSpacing>
-                                                        <real value="3.4028234663852886e+38"/>
-                                                        <real value="3.4028234663852886e+38"/>
                                                         <real value="3.4028234663852886e+38"/>
                                                         <real value="3.4028234663852886e+38"/>
                                                         <real value="3.4028234663852886e+38"/>
@@ -871,13 +847,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="iMessageButton" destination="aF4-qg-ZBC" id="pxX-0e-kLa"/>
                         <outlet property="iOSButton" destination="dfA-0N-fjM" id="rPN-us-x0y"/>
                         <outlet property="iTunesButton" destination="K1K-m5-O5e" id="HbD-Kb-zaB"/>
                         <outlet property="label" destination="HyC-O3-ffA" id="HUf-Tp-nfR"/>
                         <outlet property="macOSButton" destination="Wre-bw-tK7" id="SBR-7Z-Sz8"/>
                         <outlet property="progressIndicator" destination="2nI-sp-2Wx" id="cG8-LQ-Duw"/>
-                        <outlet property="watchOSButton" destination="0HW-28-ggo" id="W4A-Z1-bA2"/>
                     </connections>
                 </viewController>
             </objects>

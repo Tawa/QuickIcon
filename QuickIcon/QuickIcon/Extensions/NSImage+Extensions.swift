@@ -63,7 +63,6 @@ extension NSImage {
 	func save(at path: String) {
 		guard let imageData = self.tiffRepresentation,
 			let imageRep = NSBitmapImageRep.imageReps(with: imageData).first as? NSBitmapImageRep else {
-			print("Could not generate image Data")
 			return
 		}
 		let properties: [NSBitmapImageRep.PropertyKey: Any] = [
@@ -71,10 +70,6 @@ extension NSImage {
 		]
 		let data = imageRep.representation(using: .png, properties: properties)
 		
-		let wrote = FileManager.default.createFile(atPath: path, contents: data, attributes: nil)
-		
-		if !wrote {
-			print("Could not save image")
-		}
+		let _ = FileManager.default.createFile(atPath: path, contents: data, attributes: nil)
 	}
 }

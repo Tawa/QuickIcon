@@ -44,7 +44,6 @@ class AppIconGenerator {
 													withIntermediateDirectories: true,
 													attributes: nil)
 		} catch {
-			print("COULD NOT CREATE DIRECTORY: \(error.localizedDescription)")
 		}
 	}
 	

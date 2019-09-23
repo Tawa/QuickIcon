@@ -34,7 +34,6 @@ struct AppIcon: Codable {
 			let jsonDecoder = JSONDecoder()
 			return try jsonDecoder.decode(AppIcon.self, from: data)
 		} catch {
-			print("Error Loading JSONFile: \(error.localizedDescription)")
 			return nil
 		}
 	}
@@ -50,7 +49,6 @@ struct AppIcon: Codable {
 			let data = try jsonEncoder.encode(self)
 			try data.write(to: URL(fileURLWithPath: filePath))
 		} catch {
-			print("Could not write Contents.json: \(error.localizedDescription)")
 		}
 	}
 }

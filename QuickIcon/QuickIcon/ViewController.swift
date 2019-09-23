@@ -45,7 +45,6 @@ class ViewController: NSViewController {
 		for i in 0..<iconsDetails.count {
 			let icon = iconsDetails[i]
 			
-			print("Generating for: \(i)")
 			let generator = AppIconGenerator(appIcon: icon.appIcon,
 											 image: image,
 											 folderName: icon.folderName)
@@ -53,7 +52,6 @@ class ViewController: NSViewController {
 			generator.start(in: directory, updateProgress: {
 				self.progressIndicator.increment(by: 1)
 			}) { completed in
-				print("Done: \(completed) : \(i)")
 				if i == iconsDetails.count - 1 {
 					if completed {
 						self.showAlert(message: "Done")

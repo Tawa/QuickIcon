@@ -45,6 +45,7 @@ struct AppIcon: Codable {
 	
 	func save(to filePath: String) {
 		let jsonEncoder = JSONEncoder()
+		jsonEncoder.outputFormatting = .prettyPrinted
 		do {
 			let data = try jsonEncoder.encode(self)
 			try data.write(to: URL(fileURLWithPath: filePath))

@@ -11,16 +11,18 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+	private func disableZoomButton() {
+		for window in NSApplication.shared.windows {
+			let button = window.standardWindowButton(NSWindow.ButtonType.zoomButton)
+			button?.isEnabled = false
+		}
+	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Insert code here to initialize your application
+		disableZoomButton()
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
-		// Insert code here to tear down your application
 	}
-
-
 }
 

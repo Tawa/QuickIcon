@@ -10,7 +10,6 @@ import Foundation
 
 struct AppIcon: Codable {
 	let images: [Image]
-	let info: Info = Info()
 	
 	enum Preset: String {
 		case iOS
